@@ -1,26 +1,16 @@
 # Ex.No:3(F) WRAPPER CLASS
 
 ## QUESTION:
-
-Write a Java program to check if a number is an Armstrong number using Math.pow() and the Integer wrapper class. Take input from the user.
+Write a Java program to convert a string to an integer using a wrapper class and perform addition.
 
 ## AIM:
-
-To write a Java program to check whether a given number is an Armstrong number using Math.pow() and the Integer wrapper class.
-
+To convert string inputs into integers using the wrapper class and perform addition.
 
 ## ALGORITHM :
-1.	Start the program.
-2.	Import the necessary package 'java.util'
-3.	Read a number from the user using Scanner and store it in an Integer wrapper variable.
-4. Store the original number in another variable and initialize sum = 0.
-5. Find the number of digits in the number using String.valueOf(number).length().
-6. Extract each digit using the modulus operator (%), raise it to the power of the number of digits using Math.pow(), and add it to sum.
-7. Compare sum with the original number. If they are equal, print that it is an Armstrong number; otherwise, print that it is not an Armstrong number.
-
-
-
-
+1.	Read two numbers as strings.
+2.	Convert them to integers using Integer.parseInt().
+3.	Add the two integers.
+4.	Display the sum.
 
 ## PROGRAM:
  ```
@@ -32,45 +22,34 @@ RegisterNumber:  212223230180
 ```
 
 ## SOURCE CODE:
-
 ```
 import java.util.Scanner;
 
-public class ArmstrongNumber {
+public class Main {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
 
-        Integer number = sc.nextInt();
-        int originalNumber = number;
-        int sum = 0;
+        String str1 = scanner.next();
 
-        int digits = String.valueOf(number).length();
+        String str2 = scanner.next();
 
-        while (number > 0) {
-            int digit = number % 10;
-            sum += (int) Math.pow(digit, digits);
-            number = number / 10;
+        scanner.close();
+
+        try {
+            int num1 = Integer.parseInt(str1);
+            int num2 = Integer.parseInt(str2);
+
+
+            int sum = num1 + num2;
+            System.out.println("Sum = " + sum);
+        } catch (NumberFormatException e) {
+            System.out.println("Invalid input. Please enter a valid number.");
         }
-
-        if (sum == originalNumber) {
-            System.out.println(originalNumber + " is an Armstrong number.");
-        } else {
-            System.out.println(originalNumber + " is not an Armstrong number.");
-        }
-
-        sc.close();
     }
 }
 ```
-
-
-
-
-
 ## OUTPUT:
-
-![alt text](image.png)
+<img width="1223" height="414" alt="image" src="https://github.com/user-attachments/assets/899591cc-4837-4c4d-9693-94fdcade6361" />
 
 ## RESULT:
-
-The Java program was executed successfully, and the given number was checked and displayed whether it is an Armstrong number or not.
+The program successfully converts strings to integers and displays their sum.
